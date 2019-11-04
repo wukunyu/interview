@@ -20,26 +20,3 @@ function reverseCode(str) {
 }
 console.log(reverseCode(`Let's take LeetCode contest`));
 
-function findSubs(str) {
-  let ret = [],
-    num = 0;
-  for (let i = 0; i < str.length; i++) {
-    for (let j = i + 1; j < str.length + 1; j++) {
-      let substr = str.substring(i, j);
-      if (substr.length % 2 !== 0) continue;
-      let zNum = 0;
-      Array.from(substr).forEach(s => {
-        if (s === '0') {
-          zNum++;
-        }
-      });
-      if (zNum === substr.length / 2) {
-        num++;
-      }
-    }
-  }
-  console.log(num);
-}
-findSubs('00110011');
-// 123
-// 1 12 123 2 23 3
